@@ -54,7 +54,6 @@ function changeQuestion() {
         document.querySelector("#questionPrompt").textContent = questionInfo.title;
         questionDiv.className = "questionFadeIn";
     }, 400);
-
 }
 
 function checkAnswer() {
@@ -80,8 +79,8 @@ function checkAnswer() {
                 answerDiv.className = "fadeAway";
                 setTimeout(function () {
                     answerDiv.style = "display: none;";
-                }, 300);
-            }, 700);
+                }, 1000); //300
+            }, 1000); //700
             questionDiv.className = "questionFadeOut";
         }
         questionNum++;
@@ -104,7 +103,7 @@ function showEndGame() {
         answerDiv.style = "display: none;";
         endGameDiv.style = "display: block;";
         endGameDiv.className = "slideDown";
-    }, 700)
+    }, 1000) //700
 }
 
 function submitAndSaveScore(event) {

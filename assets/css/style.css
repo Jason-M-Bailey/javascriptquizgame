@@ -16,7 +16,7 @@
     animation-name: title-slide-out;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
-    animation-duration: 0.40s;
+    animation-duration: 1s; /* 0.4*/
     animation-play-state: paused;
 }
 
@@ -98,49 +98,49 @@ h1, h2 {
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
     animation-iteration-count: 1;
-    animation-duration: 1s; 
+    animation-duration: 1s; /* 0.4s */
 }
 
 .slideUp {
     animation-name: slide-up;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-    animation-duration: 0.50s;
+    animation-duration: 1s; /* 0.5s */
 }
 
 .slideDown {
     animation-name: slide-down;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
-    animation-duration: 0.70s;
+    animation-duration: 1s; /* .7 */
 }
 
 .questionFadeOut {
     animation-name: quiz-fade-out;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-duration: 0.30s;
+    animation-duration: 1s; /* .3s */
 }
 
 .questionFadeIn {
     animation-name: quiz-fade-in;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-duration: 0.30s;
+    animation-duration: 1s; /* .3s */
 }
 
 .fadeInOut {
     animation-name: fade-in-out;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-duration: 1.00s;
+    animation-duration: 1s;
 }
 
 .fadeAway {
     animation-name: fade-away;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-duration: 0.30s;
+    animation-duration: 1s; /* .3s */
 }
 
 @keyframes title-slide-out {
