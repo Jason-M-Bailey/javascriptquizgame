@@ -1,3 +1,7 @@
+document.querySelector("#quizStart").onclick = startQuiz;
+document.addEventListener("click", checkAnswer);
+document.querySelector("#submitButton").onclick = submitAndSaveScore;
+
 var answerText = "";
 var time = 60;
 var timeLimit;
@@ -27,7 +31,7 @@ function startQuiz() {
         document.querySelector("#titleScreen").style = "display: none;";
         document.querySelector("#questionBlock").style = "display: block;";
         document.querySelector("#questionBlock").className = "slideUp";
-    }, 400);
+    }, 1000); //400
 
     timeLimit = setInterval(function () {
         time--;
@@ -39,6 +43,7 @@ function startQuiz() {
     }, 1000);
 }
 
+
 function changeQuestion() {
     var questionInfo = questions[questionNum];
     if (questionInfo == undefined) {
@@ -46,6 +51,9 @@ function changeQuestion() {
         showEndGame();
         return;
     }
+    /*  questions[questionIndex].choices = questions[questionIndex].choices.sort(function () {
+        return Math.random() - 0.5
+      })  */
     setTimeout(function () {
         for (var i = 0; i < optionButtons.length; i++) {
             optionButtons[i].textContent = i + 1 + '. ' + questionInfo.choices[i];
@@ -53,7 +61,7 @@ function changeQuestion() {
         }
         document.querySelector("#questionPrompt").textContent = questionInfo.title;
         questionDiv.className = "questionFadeIn";
-    }, 400);
+    }, 1000); //400
 }
 
 function checkAnswer() {
@@ -63,9 +71,12 @@ function checkAnswer() {
             if (playerAnswer === questions[questionNum].answer) {
                 answerText = "Correct!";
                 time += 10;
+                // time.style.fontWeight = "bold";
+                // make the time pop - increase font-size for a half-second
             } else {
                 answerText = "Wrong!";
                 time -= 10;
+                // make the time pop - increase font-size for a half-second
                 if (time <= 0) {
                     time = 0;
                 }
@@ -93,7 +104,7 @@ function showEndGame() {
     if (time != 0) {
         document.querySelector("#showScore").textContent = time;
     } else {
-        document.querySelector("#showScore").textContent = "DNF";
+        document.querySelector("#showScore").textContent = "Did not finish :(";
     }
     if (questionDiv.className != "questionFadeOut") {
         questionDiv.className = "questionFadeOut";
@@ -129,6 +140,3 @@ function submitAndSaveScore(event) {
     }
 }
 
-document.querySelector("#quizStart").onclick = startQuiz;
-document.addEventListener("click", checkAnswer);
-document.querySelector("#submitButton").onclick = submitAndSaveScore;
